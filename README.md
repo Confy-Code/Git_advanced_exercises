@@ -118,5 +118,70 @@ Date:   Thu Jul 2 14:27:35 2026 +0200
     Initial commit
 ```
 
+**3. Keeping History tidy**
+```bash
+pick be61e6d chore: Create initial file
+chore: Create initial and second files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[detached HEAD 57a7b9d] chore: Create initial and second files.
+ Date: Thu Jul 2 14:33:39 2026 +0200
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test1.md
+ create mode 100644 test2.md
+Successfully rebased and updated refs/heads/main.
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git_advanced_exercises (main)
+$ git log
+commit 899edbd2feabb4ca11a55199c48296f2f5fbe272 (HEAD -> main)
+Author: Confy-Code <isingizweconfy@gmail.com>
+Date:   Thu Jul 2 14:38:48 2026 +0200
+
+    Create fourth file
+
+commit 3e8f6eed343833e728f0b4422ed79222342cc7ca
+Author: Confy-Code <isingizweconfy@gmail.com>
+Date:   Thu Jul 2 14:34:34 2026 +0200
+
+    Create third file
+
+commit 57a7b9d83d903f08bbc71a7a3172f1ca1c446f5d
+Author: Confy-Code <isingizweconfy@gmail.com>
+Date:   Thu Jul 2 14:33:39 2026 +0200
+
+    chore: Create initial and second files.
+
+commit ed054ee8a40806ced09a75fa2c0ed85acf3e962b (origin/main, origin/HEAD)
+Author: Confiance <isingizweconfy@gmail.com>
+Date:   Thu Jul 2 14:27:35 2026 +0200
+
+    Initial commit
+:
+```
+---
+**4. Splitting commits**
+
+
 
 
