@@ -445,7 +445,7 @@ ed054ee (origin/main, origin/HEAD) HEAD@{22}: rebase (start): checkout HEAD~3
 ---
 
 **PART2 : BRANCHING BASICS**
-1.
+1. Feature Branch Creation
 ```bash
 newuser123@DESKTOP-CRGBPJ0 MINGW64 /e
 $ cd Git-exercise/
@@ -456,7 +456,7 @@ Switched to a new branch 'ft/new-feature'
 ```
 ---
 
-2.
+2. Working on the Feature Branch
 
 ```bash
 newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
@@ -492,7 +492,7 @@ $ git commit -m "Implemented core functionality for new feature"
 ```
 ---
 
-3.  
+3.  Switching branches
 
 ```bash
 newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
@@ -530,7 +530,7 @@ $ git commit -m "Updated project readme"
 ```
 ---
 
-5.
+5. Branch deletion
 
 ```bash
 newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
@@ -573,7 +573,7 @@ Deleted branch ft/new-feature (was fd64098).
 ```
 ---
 
-6.
+6. Creating a branch from a commit
 ```bash
 newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
 $ git log --oneline
@@ -610,7 +610,7 @@ Switched to a new branch 'ft/new-branch-from-commit'
 ```
 ---
 
-7.
+7. Branch merging
 ```bash
 newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-branch-from-commit)
 $ git checkout main
@@ -638,7 +638,7 @@ $ git branch --no-merged
 ---
 
 8. .....
-9. 
+9. Renaming branches
 ```bash
 newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
 $ git branch -m ft/new-branch-from-commit ft/improved-branc-name
@@ -658,7 +658,7 @@ $ git branch --list
 ```
 ---
 
-10.
+10. Checking out detached HEAD
 ```bash
 newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
 $ git checkout 3083f66
