@@ -444,6 +444,251 @@ ed054ee (origin/main, origin/HEAD) HEAD@{22}: rebase (start): checkout HEAD~3
 ```
 ---
 
+**PART2 : BRANCHING BASICS**
+1.
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e
+$ cd Git-exercise/
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git checkout -b ft/new-feature
+Switched to a new branch 'ft/new-feature'
+```
+---
+
+2.
+
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ touch feature.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ ls
+README.md  feature.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ nano filename.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ ls
+README.md  feature.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ nano feature.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ nano feature.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ git add feature.txt
+warning: in the working copy of 'feature.txt', LF will be replaced by CRLF the n
+ext time Git touches it
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ git commit -m "Implemented core functionality for new feature"
+[ft/new-feature fd64098] Implemented core functionality for new feature
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+```
+---
+
+3.  
+
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ touch readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ nano readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git commit -m "Updated project readme"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        readme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git add readme.txt
+warning: in the working copy of 'readme.txt', LF will be replaced by CRLF the ne
+xt time Git touches it
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git commit -m "Updated project readme"
+[main 3e92123] Updated project readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+```
+---
+
+5.
+
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch -d ft/new-feature
+error: the branch 'ft/new-feature' is not fully merged
+hint: If you are sure you want to delete it, run 'git branch -D ft/new-feature'
+hint: Disable this message with "git config advice.forceDeleteBranch false"
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ ls
+README.md  readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git checkout ft/new-feature
+Switched to branch 'ft/new-feature'
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ git branch -d ft/new-feature
+error: cannot delete branch 'ft/new-feature' used by worktree at 'E:/Git-exercis
+e'
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-feature)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch -d ft/new-feature
+error: the branch 'ft/new-feature' is not fully merged
+hint: If you are sure you want to delete it, run 'git branch -D ft/new-feature'
+hint: Disable this message with "git config advice.forceDeleteBranch false"
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ ^C
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch -D ft/new-feature
+Deleted branch ft/new-feature (was fd64098).
+```
+---
+
+6.
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git log --oneline
+3e92123 (HEAD -> main) Updated project readme
+e4744a0 (origin/main, origin/HEAD) Update README.md
+3083f66 Update README
+826eba3 Update README
+86ec50c refactor: update README
+be0f35c Update README.md
+6483bd6 Update README.md
+9dbca11 Update README.md
+7cd7a29 Merge pull request #1 from HIRWA13/chore/refine-exercises
+bf8e72c Update README.md
+e632651 refactor: clean and update exercise structure
+aabb257 refactor: create branch from a commit
+4f71b9f refactor: update exercises
+6448eeb refactor: update readme file
+013976b refactor: update exercises
+23ea742 refactor: update and remove mistakes
+248fb71 refactor: Update Exercises
+6e0e33f refactor: Update README.md
+82125a9 refactor: Update README.md
+2ceafa5 refactor: update README
+ea7834e chore: add part one exercises
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git checkout -b ft/new-branch-from-commit 308f66
+fatal: '308f66' is not a commit and a branch 'ft/new-branch-from-commit' cannot
+be created from it
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git checkout -b ft/new-branch-from-commit 3083f66
+Switched to a new branch 'ft/new-branch-from-commit'
+```
+---
+
+7.
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (ft/new-branch-from-commit)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git merge ft/new-branch-from-commit
+Already up to date.
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch --list
+  ft/new-branch-from-commit
+* main
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch --merged
+  ft/new-branch-from-commit
+* main
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch --no-merged
+```
+---
+
+8. .....
+9. 
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch -m ft/new-branch-from-commit ft/improved-branc-name
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch --list
+  ft/improved-branc-name
+* main
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch -m ft/improved-branc-name ft/improved-branch-name
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git branch --list
+  ft/improved-branch-name
+* main
+```
+---
+
+10.
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git checkout 3083f66
+Note: switching to '3083f66'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 3083f66 Update README
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise ((3083f66...))
+```
+---
+
+
+
+
+
 
 
 
