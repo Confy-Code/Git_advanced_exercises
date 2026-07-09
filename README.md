@@ -803,6 +803,54 @@ ea7834e chore: add part one exercises
 ---
 
 **6. Ignoring files/ directories**
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ touch .gitignore
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ ls
+README.md  njn.txt  readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ ls
+README.md  njn.txt  readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git rm --cached .gitgnore
+fatal: pathspec '.gitgnore' did not match any files
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ ls -a
+./  ../  .git/  .gitgnore  .gitignore  README.md  njn.txt  readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ rm .gitgnore
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ ls -a
+./  ../  .git/  .gitignore  README.md  njn.txt  readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ nano .gitgnore
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ ls -a
+./  ../  .git/  .gitgnore  .gitignore  README.md  njn.txt  readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ rm gitgnore
+rm: cannot remove 'gitgnore': No such file or directory
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ nano .gitignore
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ nano .gitignore
+```
+---
+
+**7. Working with Tags**
+
 
 
 
