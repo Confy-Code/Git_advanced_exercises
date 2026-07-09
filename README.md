@@ -685,6 +685,131 @@ newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise ((3083f66...))
 ```
 ---
 
+### PART 3: ADVANCED WORKFLOWS
+
+**1. Stashing changes**
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git stash list
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git stash save "Saved my current changes to main"
+No local changes to save
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ ls
+README.md  readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ nano readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git stash save "Stached the unsaved changes in readme.txt"
+Saved working directory and index state On main: Stached the unsaved changes in
+readme.txt
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git stash list
+stash@{0}: On main: Stached the unsaved changes in readme.txt
+```
+---
+
+**2. Retrieving the stashed changes**
+> You can use `git stash apply` to keep a copy of the changes into the stash drawer, or you can use `git stash pop` 
+if you want nothing in the stash drawer.
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git stash pop
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (461b842d94e0e6b4bb3af9c77bd47e88e7b764a9)
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git stash list
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$
+```
+---
+
+**3. Branch Merging conflicts (continued)**
+**4.**
+**5. Understanding the DETACHED HEAD state**
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise ((3083f66...))
+$ git log --oneline
+3083f66 (HEAD, ft/improved-branch-name) Update README
+826eba3 Update README
+86ec50c refactor: update README
+be0f35c Update README.md
+6483bd6 Update README.md
+9dbca11 Update README.md
+7cd7a29 Merge pull request #1 from HIRWA13/chore/refine-exercises
+bf8e72c Update README.md
+e632651 refactor: clean and update exercise structure
+aabb257 refactor: create branch from a commit
+4f71b9f refactor: update exercises
+6448eeb refactor: update readme file
+013976b refactor: update exercises
+23ea742 refactor: update and remove mistakes
+248fb71 refactor: Update Exercises
+6e0e33f refactor: Update README.md
+82125a9 refactor: Update README.md
+2ceafa5 refactor: update README
+ea7834e chore: add part one exercises
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise ((3083f66...))
+$ git reset
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise ((3083f66...))
+$ git checkout main
+Previous HEAD position was 3083f66 Update README
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git log --oneline
+3e92123 (HEAD -> main) Updated project readme
+e4744a0 (origin/main, origin/HEAD) Update README.md
+3083f66 (ft/improved-branch-name) Update README
+826eba3 Update README
+86ec50c refactor: update README
+be0f35c Update README.md
+6483bd6 Update README.md
+9dbca11 Update README.md
+7cd7a29 Merge pull request #1 from HIRWA13/chore/refine-exercises
+bf8e72c Update README.md
+e632651 refactor: clean and update exercise structure
+aabb257 refactor: create branch from a commit
+4f71b9f refactor: update exercises
+6448eeb refactor: update readme file
+013976b refactor: update exercises
+23ea742 refactor: update and remove mistakes
+248fb71 refactor: Update Exercises
+6e0e33f refactor: Update README.md
+82125a9 refactor: Update README.md
+2ceafa5 refactor: update README
+ea7834e chore: add part one exercises
+```
+---
+
+**6. Ignoring files/ directories**
+
+
+
+
+
+
+
 
 
 
