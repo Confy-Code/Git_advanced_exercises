@@ -123,28 +123,6 @@ Date:   Thu Jul 2 14:27:35 2026 +0200
 pick be61e6d chore: Create initial file
 chore: Create initial and second files.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [detached HEAD 57a7b9d] chore: Create initial and second files.
  Date: Thu Jul 2 14:33:39 2026 +0200
  2 files changed, 0 insertions(+), 0 deletions(-)
@@ -850,6 +828,84 @@ $ nano .gitignore
 ---
 
 **7. Working with Tags**
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git log --oneline
+3e92123 (HEAD -> main) Updated project readme
+e4744a0 (origin/main, origin/HEAD) Update README.md
+3083f66 (ft/improved-branch-name) Update README
+826eba3 Update README
+86ec50c refactor: update README
+be0f35c Update README.md
+6483bd6 Update README.md
+9dbca11 (tag: Update.0) Update README.md
+7cd7a29 Merge pull request #1 from HIRWA13/chore/refine-exercises
+bf8e72c Update README.md
+e632651 refactor: clean and update exercise structure
+aabb257 refactor: create branch from a commit
+4f71b9f refactor: update exercises
+6448eeb refactor: update readme file
+013976b refactor: update exercises
+23ea742 refactor: update and remove mistakes
+248fb71 refactor: Update Exercises
+6e0e33f refactor: Update README.md
+82125a9 refactor: Update README.md
+2ceafa5 refactor: update README
+ea7834e chore: add part one exercises
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git tag v1.0 3e92123
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git show v1.0
+commit 3e9212306b2c6aff18d044c6dc2f4fae4ef5988b (HEAD -> main, tag: v1.0)
+Author: Confy-Code <isingizweconfy@gmail.com>
+Date:   Tue Jul 7 13:33:25 2026 +0200
+
+    Updated project readme
+
+diff --git a/readme.txt b/readme.txt
+new file mode 100644
+index 0000000..863fde2
+--- /dev/null
++++ b/readme.txt
+@@ -0,0 +1 @@
++This readme text file is designed to tell you a little about our main branch
+```
+---
+
+**8. Listing and deleting the tags**
+```bash
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git tag
+Update.0
+v1.0
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git tag -d Update.0
+Deleted tag 'Update.0' (was 09cc4b1)
+
+newuser123@DESKTOP-CRGBPJ0 MINGW64 /e/Git-exercise (main)
+$ git tag
+v1.0
+```
+> To push tags you have to use `git push
+---
+
+**9. Pushing local work to remote repositories**
+```bash
+git push origin <branch name>
+```
+---
+
+**10. Pulling changes from remote repositories**
+```bash
+git fetch --all
+
+git pull origin main
+```
+---
+
 
 
 
